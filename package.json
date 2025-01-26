@@ -1,0 +1,72 @@
+{
+  "name": "cors-chrome-extension",
+  "displayName": "コルソ - Cors",
+  "description": "コルソ [Cors] is usefull to bypass CORS browser policy",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Vittorio Scaperrotta",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">= 20.18.x"
+  },
+  "packageManager": "yarn@4.5.0",
+  "scripts": {
+    "dev": "better-npm-run dev",
+    "build": "better-npm-run build",
+    "build:prepare": "node scripts/prepare.js",
+    "build:web": "vite build",
+    "lint": "eslint .",
+    "preview": "better-npm-run preview",
+    "clear": "rimraf --glob dist"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "vite",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "preview": {
+      "command": "vite preview",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "build": {
+      "command": "run-s clear build:web build:prepare",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "dependencies": {
+    "@types/chrome": "^0.0.299",
+    "better-npm-run": "^0.1.1",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^11.3.0",
+    "npm-run-all": "^4.1.5",
+    "prop-types": "^15.8.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-feather": "^2.0.10",
+    "rimraf": "^6.0.1",
+    "sass": "^1.83.4",
+    "terser": "^5.37.0",
+    "vite-plugin-static-copy": "^2.2.0",
+    "webextension-polyfill": "^0.12.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "archiver": "^7.0.1",
+    "eslint": "^9.18.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "vite": "^6.0.11"
+  }
+}
