@@ -83,8 +83,8 @@ Scripts can be run using Yarn:
 
 ## Main Dependencies
 
-- **React** (`^18.3.1`) and **React DOM** (`^18.3.1`) for UI management.
-- **Sass** (`^1.83.1`) for advanced styling.
+- **React** (`^19.0.0`) and **React DOM** (`^19.0.0`) for UI management.
+- **Sass** (`^1.83.4`) for advanced styling.
 - **webextension-polyfill** (`^0.12.0`) for cross-browser compatibility.
 - **vite-plugin-static-copy** (`^2.2.0`) to manage static files.
 
