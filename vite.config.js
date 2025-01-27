@@ -19,6 +19,7 @@ export default defineConfig({
     alias: {
       '@background': `${APP_DIR}/background`,
       '@options': `${APP_DIR}/options`,
+      '@styles': `${APP_DIR}/styles`,
       '@utils': `${APP_DIR}/utils`,
     },
   },

@@ -77,13 +77,13 @@ function getCORSRule() {
     },
     condition: {
       // If you want this to apply to ALL URLs, leave urlFilter empty or set to "*"
-      urlFilter: "",
+      urlFilter: "*",
       // Specifies which resource types the rule should affect
       resourceTypes: [
         "main_frame",
         "sub_frame",
         "xmlhttprequest",
-        "fetch",
+        // "fetch",
         "script",
         "stylesheet",
         "image",

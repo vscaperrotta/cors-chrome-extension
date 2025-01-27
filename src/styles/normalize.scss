@@ -1,12 +1,3 @@
-// Theme
-@use './theme';
-
-// Components
-// @use './components/exampe';
-
-// Layout
-@use './layout/app';
-
 // Global SCSS styles
 * {
   box-sizing: border-box;
@@ -15,13 +6,11 @@
 }
 
 body {
-  // background: var(--global-background);
-  // color: var(--global-color);
   font-family: 'Inter', sans-serif;
   letter-spacing: .05rem;
   margin: 0;
   min-width: 22.5rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 input::-webkit-outer-spin-button,

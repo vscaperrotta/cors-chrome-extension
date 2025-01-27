@@ -1,17 +1,22 @@
 // src/options.jsx
 import { useEffect, useState } from "react";
+
+import defaultMethods from '@utils/defaultMethods';
+
+import Alert from './components/Alert';
 import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import Section from './components/Section';
 import Footer from './components/Footer';
 
 import pkgJson from '../../package.json';
+import messages from "./modules/messages";
 
-
-const defaultMethods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"];
 
 function App() {
+  // States
   const [allowedMethods, setAllowedMethods] = useState(defaultMethods);
+  const [hasAlert, setHasAlert] = useState(false);
 
   // Load saved methods from chrome.storage on component mount
   useEffect(() => {
@@ -34,7 +39,12 @@ function App() {
   // Save to chrome.storage
   const saveMethods = () => {
     chrome.storage.local.set({ allowedMethods }, () => {
-      alert("Methods saved!");
+      setHasAlert(true)
+
+      // Restore alert state to default state
+      setTimeout(() => {
+        setHasAlert(false)
+      }, 3000)
     });
   };
 
@@ -42,42 +52,58 @@ function App() {
   const restoreDefaults = () => {
     chrome.storage.local.set({ allowedMethods: defaultMethods }, () => {
       setAllowedMethods(defaultMethods);
-      alert("Defaults restored!");
+      setHasAlert(true)
+
+      // Restore alert state to default state
+      setTimeout(() => {
+        setHasAlert(false)
+      }, 3000)
     });
   };
 
   return (
-    <div style={{ fontFamily: "sans-serif", margin: "1rem" }}>
-      <h1>CORS Bypasser - Options</h1>
+    <div className="options__wrapper">
+      <Alert
+        active={hasAlert}
+        message={allowedMethods ? messages.alertRestoreDefault : messages.alertSave}
+      />
 
-      <Section
-        title='Edit HTTP methods'
-        subtitle='Select which HTTP methods you want to allow:'
-      >
-        {defaultMethods.map((method) => (
-          <Checkbox
-            key={method}
-            value={method}
-            label={method}
-            checked={allowedMethods.includes(method)}
-            onChange={() => handleCheckboxChange(method)}
-          />
-        ))}
-      </Section>
+      <h1 className="options__title">
+        {messages.title}
+      </h1>
 
-      <div style={{ marginTop: "1rem" }}>
+      <div className="options__sections">
+        <Section
+          title={messages.httpMethodsTitle}
+          subtitle={messages.httpMethodsSubtitle}
+        >
+          {defaultMethods.map((method) => (
+            <Checkbox
+              key={method}
+              value={method}
+              label={method}
+              checked={allowedMethods.includes(method)}
+              onChange={() => handleCheckboxChange(method)}
+            />
+          ))}
+        </Section>
+      </div>
+
+      <div className="options__actions">
         <Button
-          label='Save'
+          contained
+          label={messages.buttonSave}
           onClick={saveMethods}
         />
         <Button
-          label='Restore Defaults'
+          outlined
+          label={messages.buttonRestoreDefault}
           onClick={restoreDefaults}
         />
       </div>
 
       <Footer
-        version={`v${pkgJson.version}`}
+        message={`v${pkgJson.version}`}
       />
     </div>
   );

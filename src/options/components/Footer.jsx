@@ -1,10 +1,12 @@
 function Footer({
-  version = ''
+  message = ''
 }) {
 
   return (
-    <footer>
-      {version}
+    <footer className="footer__container">
+      <p className="footer__message">
+        {message}
+      </p>
     </footer>
   )
 }

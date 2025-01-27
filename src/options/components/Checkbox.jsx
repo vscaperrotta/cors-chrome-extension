@@ -4,10 +4,9 @@ function Checkbox({
   value = '',
   label = ''
 }) {
-
   return (
-    <div>
-      <label>
+    <div className='checkbox__container'>
+      <label className='checkbox__label'>
         <input
           type="checkbox"
           value={value}

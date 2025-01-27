@@ -21,8 +21,6 @@ export async function getManifest() {
       "storage",
       "declarativeNetRequest",
       "declarativeNetRequestWithHostAccess"
-      // Se vuoi leggere i feedback sulle regole, puoi aggiungere:
-      // "declarativeNetRequestFeedback"
     ],
     host_permissions: [
       "<all_urls>"

@@ -1,10 +1,19 @@
 function Button({
-  onChange = () => { },
-  label = ''
+  onClick = () => { },
+  label = '',
+  contained = false,
+  outlined = false,
 }) {
 
   return (
-    <button onChange={onChange}>
+    <button
+      className={`
+        button__container
+        ${contained ? 'contained' : ''}
+        ${outlined ? 'outlined' : ''}
+      `}
+      onClick={onClick}
+    >
       {label}
     </button>
   )

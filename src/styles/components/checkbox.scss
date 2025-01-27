@@ -1,0 +1,12 @@
+.checkbox__container {
+
+  .checkbox__label {
+    align-items: center;
+    display: flex;
+    gap: .5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

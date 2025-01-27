@@ -1,17 +1,17 @@
 function Section({
   children = null,
-  title = '',
-  subtitle = '',
+  title = null,
+  subtitle = null,
 }) {
   return (
-    <div>
-      {title ? (
-        <h3>
+    <div className="section__container">
+      {title !== null ? (
+        <h2 className="section__title">
           {title}
-        </h3>
+        </h2>
       ) : null}
-      {subtitle ? (
-        <p>
+      {subtitle !== null ? (
+        <p className="section__subtitle" >
           {subtitle}
         </p>
       ) : null}
@@ -20,7 +20,7 @@ function Section({
           {children}
         </div>
       ) : null}
-    </div>
+    </div >
   )
 }
 
