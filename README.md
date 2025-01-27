@@ -18,7 +18,7 @@
 
 ## Key Features
 
-- **DOM Inspection**: Allows you to examine CSS details of specific elements directly from the browser.
+- **HTTP**: Allow you to bypass CORS browser policy to dev in test environments.
 
 ---
 
