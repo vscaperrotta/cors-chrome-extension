@@ -1,0 +1,21 @@
+:root {
+  // Alert
+  --alert-background: #b3eac5;
+  --alert-border-color: #3a9958;
+  --alert-message-color: #333;
+
+  // Footer
+  --footer-message-color: #888;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // Alert
+    --alert-background: #b3eac5;
+    --alert-border-color: #3a9958;
+    --alert-message-color: #333;
+
+    // Footer
+    --footer-message-color: #888;
+  }
+}

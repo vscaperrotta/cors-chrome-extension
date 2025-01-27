@@ -1,0 +1,36 @@
+// Global SCSS styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .05rem;
+  margin: 0;
+  min-width: 22.5rem;
+  padding: 2rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input,
+select {
+  letter-spacing: .05rem;
+}
+
+hr {
+  max-width: 20rem;
+  margin-bottom: 2rem;
+  opacity: .5;
+  width: 100%;
+}

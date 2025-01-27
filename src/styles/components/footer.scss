@@ -1,0 +1,12 @@
+.footer__container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+
+  .footer__message {
+    color: var(--footer-message-color);
+    font-size: .8rem;
+  }
+}

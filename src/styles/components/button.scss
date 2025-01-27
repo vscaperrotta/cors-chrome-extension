@@ -1,0 +1,25 @@
+.button__container {
+  border: .1rem solid #333;
+  border-radius: .4rem;
+  color: #333;
+  max-width: 11rem;
+  min-height: 2.5rem;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.contained {
+    background-color: #333;
+    color: #fff;
+  }
+
+  &.outlined {
+    background-color: transparent;
+    color: #333;
+  }
+}
